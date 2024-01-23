@@ -31,7 +31,7 @@ class Rationnel{
     *  
     */
     public int setNumerateur(int numerateur){
-        this.numerateur = numerateur;
+        return this.numerateur = numerateur;
     }
 
     /**
@@ -45,8 +45,8 @@ class Rationnel{
     *  
     */
     public int setDenominateur(int denominateur){
-        this.denominateur = denominateur;
+        return this.denominateur = denominateur;
     }
 
-    
+
 }
