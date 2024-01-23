@@ -48,5 +48,12 @@ class Rationnel{
         return this.denominateur = denominateur;
     }
 
+    /**
+    *  
+    */
+    public Rationnel inverse(){
+        return Rationnel(this.denominateur, this.numerateur); 
+    } 
 
+    
 }
