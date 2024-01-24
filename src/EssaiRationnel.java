@@ -4,7 +4,7 @@
 class EssaiRationnel{
     public static void main(String[] args){
         Rationnel rationnel;
-        rationnel = new Rationnel(10, 5);
+        rationnel = new Rationnel(12, 142);
 
 
         /*System.out.println("Le numerateur : " + rationnel.getNumerateur());
@@ -26,7 +26,7 @@ class EssaiRationnel{
         */
 
         System.out.println("Ajoute : ");
-        Rationnel machine = new Rationnel(0,5);
+        Rationnel machine = new Rationnel(158,169);
         Rationnel addition = rationnel.ajoute(machine);
 
         System.out.println(addition.getNumerateur() + "/" + addition.getDenominateur());

@@ -11,13 +11,18 @@ class Rationnel{
     *  
     */
     public Rationnel(int n, int d){
-        if(d >= 0){
+        if(d > 0){
             this.numerateur = n;
             this.denominateur = d;
+        } else if (d == 0){
+            System.out.println("Le denominateur est egale a 0 !");
         } else {
-            this.denominateur = d;
-            System.out.println("Rationnel : Il faut changer le signe du numerateur ! ");
+            this.denominateur = -d;
+            this.numerateur = -n;
+            System.out.println("Rationnel : Le signe du numerateur est change ! ");
         }
+
+        this.reduit();
     }
 
     /**
@@ -30,8 +35,8 @@ class Rationnel{
     /**
     *  
     */
-    public int setNumerateur(int numerateur){
-        return this.numerateur = numerateur;
+    public void setNumerateur(int numerateur){
+        this.numerateur = numerateur;
     }
 
     /**
@@ -44,15 +49,19 @@ class Rationnel{
     /**
     *  
     */
-    public int setDenominateur(int denominateur){
-        return this.denominateur = denominateur;
+    public void setDenominateur(int denominateur){
+        if(denominateur > 0){
+            this.denominateur = denominateur;
+        } else if (denominateur == 0){
+            System.out.println("setDenominateur : Le denominateur est egale a 0 !");
+        }
     }
 
     /**
     *  
     */
     public Rationnel inverse() {
-        Rationnel resultatARetourne;
+        Rationnel resultatARetourne = null;
 
         if(this.numerateur == 0){
             resultatARetourne = null;
@@ -60,8 +69,7 @@ class Rationnel{
         } 
         else 
         {
-            Rationnel rationnelInverse = new Rationnel(this.denominateur, this.numerateur);
-            resultatARetourne = rationnelInverse;
+            resultatARetourne = new Rationnel(this.denominateur, this.numerateur);
         }
 
         return resultatARetourne;
@@ -97,12 +105,11 @@ class Rationnel{
         int denominateurCommun;
 
         if(unNR == null){
-            System.out.println("Impossible d'ajouter null à ce Rationnel.");
-            nbRetourner = null;
+            System.out.println("unNR est null, on renvoie l'objet sans modification !.");
+            nbRetourner = this;
         }
         else 
         {
-
             denominateurCommun = this.denominateur * unNR.denominateur;
 
             numerateur1 = this.numerateur * unNR.denominateur;
@@ -111,8 +118,6 @@ class Rationnel{
             sommeNumerateur = numerateur1 + numerateur2;
 
             nbRetourner = new Rationnel(sommeNumerateur, denominateurCommun);
-
-            nbRetourner.reduit();
         
         }
         return(nbRetourner);
