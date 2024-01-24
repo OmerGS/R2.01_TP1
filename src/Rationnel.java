@@ -105,7 +105,7 @@ class Rationnel{
         int denominateurCommun;
 
         if(unNR == null){
-            System.out.println("unNR est null, on renvoie l'objet sans modification !.");
+            System.out.println("ajoute : unNR est null, on renvoie l'objet sans modification !.");
             nbRetourner = this;
         }
         else 
@@ -123,5 +123,47 @@ class Rationnel{
         return(nbRetourner);
     }
 
-    
+    public Rationnel soustrait(Rationnel unNR){
+        Rationnel nbRetourner;
+        int sommeNumerateur; 
+        int numerateur1;
+        int numerateur2;
+        int denominateurCommun;
+
+        if(unNR == null){
+            System.out.println("Soustrait : unNR est null, on renvoie l'objet sans modification !.");
+            nbRetourner = this;
+        }
+        else 
+        {
+            denominateurCommun = this.denominateur * unNR.denominateur;
+
+            numerateur1 = this.numerateur * unNR.denominateur;
+            numerateur2 = unNR.numerateur * this.denominateur;
+
+            sommeNumerateur = numerateur1 - numerateur2;
+
+            nbRetourner = new Rationnel(sommeNumerateur, denominateurCommun);
+        
+        }
+        return(nbRetourner);
+    }
+
+    public Rationnel mutliplie(Rationnel unNR){
+        Rationnel nbRetourner;
+
+        if(unNR == null){
+            System.out.println("Soustrait : unNR est null, on renvoie l'objet sans modification !.");
+            nbRetourner = this;
+        }
+        else 
+        {
+            numerateur = this.numerateur * unNR.numerateur;
+            denominateur = this.denominateur * unNR.denominateur;
+
+            nbRetourner = new Rationnel(numerateur, denominateur);
+        
+        }
+        return(nbRetourner);
+    }
 }
