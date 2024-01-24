@@ -1,15 +1,25 @@
 /**
-*  
-*/
+ * The Rationnel class represents a rational number, which is a number that can be
+ * expressed as the quotient of two integers.
+ * @author O.Gunes
+ */
 class Rationnel{
-    // Commente
+    /**
+     * Numerator of the rational number.
+     */
     private int numerateur;
-    // Commente
-    private int denominateur;
 
     /**
-    *  
-    */
+     * Denominator of the rational number.
+     */
+    private int denominateur;
+
+     /**
+     * Constructs a Rationnel object with the specified numerator and denominator.
+     *
+     * @param n The numerator.
+     * @param d The denominator.
+     */
     public Rationnel(int n, int d){
         if(d > 0){
             this.numerateur = n;
@@ -26,29 +36,37 @@ class Rationnel{
     }
 
     /**
-    *  
-    */
+     * Gets the numerator of the rational number.
+     *
+     * @return The numerator.
+     */
     public int getNumerateur(){
         return this.numerateur;
     }
 
     /**
-    *  
-    */
+     * Sets the numerator of the rational number.
+     *
+     * @param numerateur The new numerator.
+     */
     public void setNumerateur(int numerateur){
         this.numerateur = numerateur;
     }
 
     /**
-    *  
-    */
+     * Gets the denominator of the rational number.
+     *
+     * @return The denominator.
+     */
     public int getDenominateur(){
         return this.denominateur;
     }
 
     /**
-    *  
-    */
+     * Sets the denominator of the rational number, checking the validity of the value.
+     *
+     * @param denominateur The new denominator.
+     */
     public void setDenominateur(int denominateur){
         if(denominateur > 0){
             this.denominateur = denominateur;
@@ -58,8 +76,10 @@ class Rationnel{
     }
 
     /**
-    *  
-    */
+     * Returns the inverse of the rational number.
+     *
+     * @return The inverse of the rational number.
+     */
     public Rationnel inverse() {
         Rationnel resultatARetourne = null;
 
@@ -76,8 +96,12 @@ class Rationnel{
     }
 
     /**
-    *  
-    */
+     * Computes and returns the greatest common divisor (GCD) of two numbers.
+     *
+     * @param a The first number.
+     * @param b The second number.
+     * @return The GCD of a and b.
+     */
     private int pgcd(int a, int b) {
         int valeurARetourne;
         if (b == 0) {
@@ -89,6 +113,10 @@ class Rationnel{
         return(valeurARetourne);
     }
 
+    /**
+     * Reduces the rational number by simplifying the numerator and denominator
+     * using their greatest common divisor (GCD).
+     */
     private void reduit() {
         int communDiviseur;
         communDiviseur = pgcd(Math.abs(this.numerateur), this.denominateur);
@@ -97,6 +125,12 @@ class Rationnel{
         this.denominateur /= communDiviseur;
     }
     
+    /**
+     * Add the rational number by another rational number.
+     *
+     * @param unNR The other rational number.
+     * @return The result of the addition.
+     */
     public Rationnel ajoute(Rationnel unNR){
         Rationnel nbRetourner;
         int sommeNumerateur; 
@@ -123,6 +157,12 @@ class Rationnel{
         return(nbRetourner);
     }
 
+    /**
+     * Substract the rational number by another rational number.
+     *
+     * @param unNR The other rational number.
+     * @return The result of the subtraction.
+     */
     public Rationnel soustrait(Rationnel unNR){
         Rationnel nbRetourner;
         int sommeNumerateur; 
@@ -149,6 +189,12 @@ class Rationnel{
         return(nbRetourner);
     }
 
+    /**
+     * Multiplies the rational number by another rational number.
+     *
+     * @param unNR The other rational number.
+     * @return The result of the multiplication.
+     */
     public Rationnel multiplie(Rationnel unNR) {
         Rationnel nbRetourner;
     
@@ -165,7 +211,12 @@ class Rationnel{
         return nbRetourner;
     }
     
-
+    /**
+     * Checks if the rational number is equal to another rational number.
+     *
+     * @param another The other rational number to compare.
+     * @return true if the rational numbers are equal, false otherwise.
+     */
     public boolean egale(Rationnel another){
         boolean rationnelEgale = false;
         boolean denominateurEgale = false;
@@ -192,6 +243,11 @@ class Rationnel{
         return(rationnelEgale);
     }
 
+    /**
+     * Returns a textual representation of the rational number.
+     *
+     * @return The textual representation of the rational number.
+     */
     public String toString(){
         String toReturn = "";
         String numerateur = "";
