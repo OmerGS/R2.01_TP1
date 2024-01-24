@@ -117,4 +117,6 @@ class Rationnel{
         }
         return(nbRetourner);
     }
+
+    
 }

@@ -1,5 +1,5 @@
 /**
-*  
+* 
 */
 class EssaiRationnel{
     public static void main(String[] args){
