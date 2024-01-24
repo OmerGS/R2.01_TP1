@@ -4,10 +4,10 @@
 class EssaiRationnel{
     public static void main(String[] args){
         Rationnel rationnel;
-        rationnel = new Rationnel(5, 8);
+        rationnel = new Rationnel(10, 5);
 
 
-        System.out.println("Le numerateur : " + rationnel.getNumerateur());
+        /*System.out.println("Le numerateur : " + rationnel.getNumerateur());
         System.out.println("Le denominateur : " + rationnel.getDenominateur());
 
         System.out.println("Set des nouveaux variables : ");
@@ -17,5 +17,18 @@ class EssaiRationnel{
 
         System.out.println("Le numerateur : " + rationnel.getNumerateur());
         System.out.println("Le denominateur : " + rationnel.getDenominateur());
+
+        Rationnel rationnelInverse = rationnel.inverse();
+        System.out.println("\n Inverse : ");
+
+        System.out.println("Le numerateur : " + rationnelInverse.getNumerateur());
+        System.out.println("Le denominateur : " + rationnelInverse.getDenominateur());
+        */
+
+        System.out.println("Ajoute : ");
+        Rationnel machine = new Rationnel(0,5);
+        Rationnel addition = rationnel.ajoute(machine);
+
+        System.out.println(addition.getNumerateur() + "/" + addition.getDenominateur());
     }
 }

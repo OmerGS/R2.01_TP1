@@ -1,0 +1,22 @@
+-numerateur : int | ok
+-denominateur : int | ok
++Rationnel(n : inte d : int) | ok
++getNumerateur() : int | ok
++setNumerateur(numerateur : int) | ok
++getDenominateurO : int | ok
++setDenominateur(denominateur : int) | ok
++inverse() : Rationnel | ok
+-reduit() | ok
+-pgcd(a : int, b : int) : int | ok
+
+
+
++ajoute(unNR : Rationnel) : Rationnel | soso a test
+
+
+
+
++soustrait(unNR : Rationnel) : Rationnel
++multiplie(unNR : Rationnel) : Rationnel
++egale(another : Rationnel) : boolean
++toString() : String
