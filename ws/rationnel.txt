@@ -10,9 +10,7 @@
 -pgcd(a : int, b : int) : int | ok
 +ajoute(unNR : Rationnel) : Rationnel | ok
 +soustrait(unNR : Rationnel) : Rationnel | ok
++multiplie(unNR : Rationnel) : Rationnel | ok
++egale(another : Rationnel) : boolean | ok
 
-+multiplie(unNR : Rationnel) : Rationnel | 
-
-
-+egale(another : Rationnel) : boolean
-+toString() : String
++toString() : String | 

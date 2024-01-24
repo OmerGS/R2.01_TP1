@@ -16,7 +16,7 @@ class Rationnel{
             this.denominateur = d;
         } else if (d == 0){
             System.out.println("Le denominateur est egale a 0 !");
-        } else {
+        } else if (d < 0) {
             this.denominateur = -d;
             this.numerateur = -n;
             System.out.println("Rationnel : Le signe du numerateur est change ! ");
@@ -91,7 +91,7 @@ class Rationnel{
 
     private void reduit() {
         int communDiviseur;
-        communDiviseur = pgcd(this.numerateur, this.denominateur);
+        communDiviseur = pgcd(Math.abs(this.numerateur), this.denominateur);
 
         this.numerateur /= communDiviseur;
         this.denominateur /= communDiviseur;
@@ -149,21 +149,68 @@ class Rationnel{
         return(nbRetourner);
     }
 
-    public Rationnel mutliplie(Rationnel unNR){
+    public Rationnel multiplie(Rationnel unNR) {
         Rationnel nbRetourner;
-
-        if(unNR == null){
-            System.out.println("Soustrait : unNR est null, on renvoie l'objet sans modification !.");
+    
+        if (unNR == null) {
+            System.out.println("Multiplier : unNR est null, on renvoie l'objet sans modification !");
             nbRetourner = this;
+        } else {
+            int nouveauNumerateur = this.numerateur * unNR.numerateur;
+            int nouveauDenominateur = this.denominateur * unNR.denominateur;
+    
+            nbRetourner = new Rationnel(nouveauNumerateur, nouveauDenominateur);
+        }
+    
+        return nbRetourner;
+    }
+    
+
+    public boolean egale(Rationnel another){
+        boolean rationnelEgale = false;
+        boolean denominateurEgale = false;
+        boolean numerateurEgale = false;
+
+        if(another == null){
+            System.out.println("egale : unNR est null, on renvoie l'objet sans le modifier !");
+            rationnelEgale = false;
         }
         else 
         {
-            numerateur = this.numerateur * unNR.numerateur;
-            denominateur = this.denominateur * unNR.denominateur;
+            if(this.numerateur == another.numerateur){
+                numerateurEgale = true;
+            } 
+            
+            if(this.denominateur == another.denominateur){
+                denominateurEgale = true;
+            }
 
-            nbRetourner = new Rationnel(numerateur, denominateur);
-        
+            if(numerateurEgale == true && denominateurEgale == true){
+                rationnelEgale = true;
+            }
         }
-        return(nbRetourner);
+        return(rationnelEgale);
+    }
+
+    public String toString(){
+        String toReturn = "";
+        String numerateur = "";
+        String denominateur = "";
+
+        if(this == null){
+            System.out.println("toString : Object null ! ");
+            toReturn = null;
+        }
+        else 
+        {
+            numerateur = String.valueOf(getNumerateur());
+            denominateur = String.valueOf(getDenominateur());
+
+            toReturn = (numerateur + "/" + denominateur);
+        }
+
+
+
+        return(toReturn);
     }
 }
